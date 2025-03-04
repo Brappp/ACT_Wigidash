@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net472</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<AssemblyName>66E2CAFC-4BAB-4601-BD40-0D365C1C435C</AssemblyName>
+		<RootNamespace>ACT_Dashboard</RootNamespace>
+		<LangVersion>9.0</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Drawing.Common" Version="7.0.0"/>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="WigiDashWidgetFramework">
+			<HintPath>C:\Program Files\G.SKILL\WigiDashManager\WigiDashWidgetFramework.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="WidgetServer.cs"/>
+		<Compile Include="FFXIVDPSWidgetInstance.cs"/>
+		<Compile Include="ACTDataConnector.cs"/>
+		<Compile Include="DataModel.cs"/>
+		<Compile Include="SettingsControl.xaml.cs">
+			<DependentUpon>SettingsControl.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Page Include="SettingsControl.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+</Project>
